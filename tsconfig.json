@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true, // Enables importing JSON files
+    "skipLibCheck": true, // Skips checking declaration files for faster builds
+    "sourceMap": true, // Enable source maps for debugging
+    "noImplicitAny": true // Ensure all variables have types
+  },
+  "include": [
+    "./src/**/*" // Ensures all your source files are included
+  ],
+  "exclude": [
+    "node_modules", // Exclude node_modules folder from compilation
+    "dist" // Exclude dist folder from being recompiled
+  ]
+}
