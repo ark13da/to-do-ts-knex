@@ -8,13 +8,13 @@ import {
 
 export const createTask = async (req: Request, res: Response) => {
   const { title } = req.body;
-try {
+  try {
     const task = await addTask({ title, completed: false });
     res.status(201).json(task);
   } catch (error) {
     res.status(500).json({ error: "Failed to create task" });
   }
-}
+};
 
 export const getTasks = async (req: Request, res: Response) => {
   try {
@@ -23,7 +23,7 @@ export const getTasks = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch tasks" });
   }
-}
+};
 
 export const completeTask = async (req: Request, res: Response) => {
   const { id } = req.params;
@@ -33,7 +33,7 @@ export const completeTask = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to mark task as completed" });
   }
-}
+};
 
 export const removeTask = async (req: Request, res: Response) => {
   const { id } = req.params;
@@ -43,4 +43,4 @@ export const removeTask = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to delete task" });
   }
-}
+};
