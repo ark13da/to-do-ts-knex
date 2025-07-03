@@ -10,13 +10,9 @@ const corsOptions = {
   methods: ["GET", "POST", "PATCH", "DELETE"], // Allow only these methods
 };
 
-const app = express();
+export const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api", taskRoutes);
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
